@@ -2,7 +2,7 @@
 
 CMD-RClick to access documentation quickly.
 ## 1.1 Variables
-Use : for assigning types
+Use : for assigning types  
 Use ```let``` for constants and ```var``` for variables
 ```swift
 // Swift allows for implicit and explicit type inference
@@ -51,7 +51,8 @@ Optional variables tell the compiler that the variable is either storing a value
 var item: String?="pickaxe"
 var age: Int?  // nil
 
-// Forced unwrapping: unwrapping the optional without checking if it contains an actual variable. Unwrapping a nil variable will cause error. This is discouraged.
+// Forced unwrapping: unwrapping the optional without checking if it contains an actual variable. 
+// Unwrapping a nil variable will cause error. This is discouraged.
 print(item!)
 
 
