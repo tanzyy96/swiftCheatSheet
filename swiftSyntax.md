@@ -1,6 +1,23 @@
 # swiftCheatSheet
 
-CMD-RClick to access documentation quickly.
+CMD-RClick to access documentation quickly.  
+1. Variables
+  1.1 Strings
+  1.2 Boolean
+  1.3 Optionals
+2. Collections
+  2.1 Arrays
+  2.2 Dictionaries
+  2.3 Sets
+  2.4 Tuples
+3. Control Flow
+  3.1 If-else
+  3.2 For-loops
+  3.3 While-loops
+  3.4 Switch Statement
+  3.5 Guard Statement
+  
+  
 ## 1. Variables
 Use : for assigning types  
 Use ```let``` for constants and ```var``` for variables
@@ -245,7 +262,37 @@ repeat {
  } while x > 5
 ```
 
+#### 3.4 Switch statement
+```swift
+switch value {
+case 1 :
+  print("value is 1.")
+case 2:
+  print("value is 2.")
+default:
+  print("unknown value.")
 
+// complex switching
+switch(x,y) {
+case (5,10): 
+  print(x + y)
+case (let n, let m) where n+m>12:
+  print(n*m)
+default:
+  print("unknown")
+}
+```
+
+#### 3.5 Guard statement
+guard -> else. 
+```swift
+for item in list {
+  guard item.count<5 else {
+    print(item)
+    continue
+  }
+}
+```  
 
 
 
