@@ -1,21 +1,21 @@
-# swiftCheatSheet
+# swiftCheatSheet Part 1
 
 CMD-RClick to access documentation quickly.  
-1. Variables
-  1.1 Strings
-  1.2 Boolean
-  1.3 Optionals
-2. Collections
-  2.1 Arrays
-  2.2 Dictionaries
-  2.3 Sets
-  2.4 Tuples
-3. Control Flow
-  3.1 If-else
-  3.2 For-loops
-  3.3 While-loops
-  3.4 Switch Statement
-  3.5 Guard Statement
+- Variables
+  - Strings
+  - Boolean
+  - Optionals
+- Collections
+  - Arrays
+  - Dictionaries
+  - Sets
+  - Tuples
+- Control Flow
+  - If-else
+  - For-loops
+  - While-loops
+  - Switch Statement
+  - Guard Statement
   
   
 ## 1. Variables
