@@ -1,4 +1,21 @@
-# swiftCheatSheet
+# swiftCheatSheet Part 2
+
+- Functions
+  - Intro to Functions
+  - Overloading
+  - Optional Return
+  - Using Functions as Parameters
+  - Closures
+- Classes
+  - Intro to Classes
+  - Convenience init
+  - Object methods
+  - Access Control
+  - Static/ Class Variables
+  - Subclass
+- Structs
+  - Intro to Structs
+  - Optional Chaining
 
 ## 4. Functions
 
@@ -61,7 +78,7 @@ func setup(val:Int = 3) {
 var myValue = setuo() // default value used, returns 5
 ```
 
-#### 4.4 Using Functions as Parameters *
+#### 4.4 Using Functions as Parameters 
 Every function has a type, or unique signature. Function types can be used in Swift like any other type,
 such as strings or integers.  
 
@@ -160,9 +177,9 @@ func myFunction(list:arrayClosure) {
 }
 ```
 
-## 5. Objects
+## 5. Classes
 
-#### 5.1 Standard Object structure
+#### 5.1 Intro to Classes
 ```swift
 class Adventurer {
   var name: String
@@ -243,7 +260,7 @@ class Warrior: Adventurer {
 Structs are basic classes that do not require inheritance and the sorts.  
 Structs use pass by value (aka makes copies) instead of referencing. Refer to class section for referencing.
 
-#### 6.1 Intro
+#### 6.1 Intro to Structs
 ```swift
 struct Box {
   let color: String
