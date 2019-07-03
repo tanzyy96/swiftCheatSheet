@@ -72,6 +72,18 @@ var age: Int?  // nil
 // Unwrapping a nil variable will cause error. This is discouraged.
 print(item!)
 ```
+When unwrapping an optional, Swift provides a neat way to check if the variable is nil:
+```swift
+// Original 
+if age != nil {
+  return age
+} else {
+  return "Error!"
+}
+
+// Shortcut
+return age ?? "Error!"
+```
 
 ## 2. Collections
 
