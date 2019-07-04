@@ -48,3 +48,85 @@ label.minimumScaleFactor = 0.2							// 2. 0.2 means font is minmally 30
 label.adjustsFontSizeToFitWidth = true			// 3. Allows auto resizing of font
 ```
 The nice thing about this font is that it resizes as we change from landscape to portait.
+
+#### 4. Button
+```swift
+// 1. Initialise button
+let button = UIButton()
+button.frame = CGRect(x: 10, y: 200, width: 100, height: 30)
+
+// 2. Default title color is white!
+button.setTitleColor(.blue, for: .normal)
+button.setTitle("Tap Here", for: .normal)
+button.addTarget(self, action: #selector(buttonWasTapped), for: .touchUpInside)
+
+// 3. Button Function
+@obj func buttonWasTapped() {
+	label.text = "Hello!"
+}
+```
+
+#### 5. Table View
+```swift
+class AppDelegate: UIResponder, UIApplicationDelegate {
+	// 1. Root object that contains the view 
+	var window: UIWindow?
+	
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+	[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		// 2. Insert navigation controller with table view inside
+		let table = TableViewController()
+		let navigation = UINavigationController(rootViewController: table)
+		window?.rootViewController = navigation
+		
+		return true
+	}
+```
+```swift
+class TableViewController: UITableViewContoller {
+	
+	let cellID = "cell"
+	let detailView = ViewController()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		...
+		// 1. Register tableViewCell with reuse identifier
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+	}
+	
+	...
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		// 2. This is for pushing selected row data to the DetailViewController
+		let selectedItem = items[indexPath.row]
+		detailView.textView.text = selectedItem
+		navigationController?,pushViewController(detailView, animated: true)
+	}
+```
+```swift
+class ViewController: UIViewController {
+	let textView = UITextView()
+	...
+	override func viewDidLoad() {
+		super.viewdidLoad()
+		...
+		layoutTextView()
+	}
+	
+	func layoutTextView() {
+		view.addSubview(textView)
+		textView.translatesAutoresizingMaskIntoConstraints = false
+		... constraint stuff...
+	}
+```
+
+
+
+
+
+
+
+
+
