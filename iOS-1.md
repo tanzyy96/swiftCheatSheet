@@ -4,6 +4,7 @@
 - Outlet Collections
 - First Responders
 - Unit testing
+- Add Bar Button on Navigation Controller (Social Media Sharing)
 
 
 #### [1. Outlet Collections](https://www.youtube.com/watch?v=NEf0uUIKPIo&list=PLY1P2_piiWEaKH2ySjNl0QyVv_xroGvFR&index=6)
@@ -66,3 +67,34 @@ func testPerson() {
 }
 ```
 Don't forget that you must go to the Person.swift file and check the testing file under Target Membership!
+
+#### 4. Add Bar Button on Navigation Controller (Social Media Sharing)
+In the Navigation bar, we can add several different types of bar buttons for additional functionalities. So we look inside our DetailViewController:
+```swift
+override func viewDidLoad() {
+	// Optional unwrapping after receiving data
+	if let imageToLoad = selectedImage {
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: 			#selector(shareTapped))
+		imageView.image = UIImage(named:imageToLoad)
+	}
+}
+
+// Method must be OBJ-C
+@ objc func shareTapped() {
+	guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+		print("No image found")
+		return
+	}
+}
+```
+Selector methods are only called on action. Apart from ```.action```, we also have different items that we can use as well. To ensure sharing/ downloading works, go to Info.plist and add Privacy - Photo Library Additions Usage Description. This will allow for the popup to enable photo savings, else the app will simply crash.
+
+
+
+
+
+
+
+
+
+
