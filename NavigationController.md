@@ -35,3 +35,10 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
   }
 }
 ```
+
+### 3. NavigationItem
+We can put items inside the Navigation bar for other functions
+```swift
+navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Open", style: .plain, target: self, action: #selector(openTapped))
+```
+Here, openTapped is an @objc method we need to write later on for the onClick effect.
