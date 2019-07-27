@@ -108,8 +108,26 @@ func tableView(_ tableView: UITableView, didSelectRowAt indextPath: IndexPath) {
 }
 ```
 
-### 3. Navigation Controller
-We can embed table view controller inside a navigation controller. This helps us navigate to another page when we click on a cell.
+### 3. Inserting New Row
+```swift
+@IBAction func addNewTodo(_ sender:Any) {
+	let addAlert = UIAlertController(title: "New Todo", message: "Enter title", preferredStyle: .alert)
+	addAlert.addTextField { (textfield: UITextField) in
+		textField.placeholder = "ToDo Item Title"
+	}
+	addAlert.addAction(UIAlertAction(title: "Create", style: .default, handler:
+		{ (action:UIAlertAction) in
+		guard let title = addAlert.textFields?.first?.text else { return }
+		let newTodo = TodoItem(title: title, compelted: false, createdAt: Date(), itemIdentifier: UUID())
+		newTodo.saveItem()
+		
+		self.todoItems.append(newTodo)
+		
+		let indexPath = IndexPath(row: self.tableView.numberOfRows(inSection: 0), section: 0)
+		
+		self.tableView.insertRows(at: [indexPath], with: .automatic)
+	}))
+```
     
     
     
